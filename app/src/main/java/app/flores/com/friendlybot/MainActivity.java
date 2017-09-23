@@ -191,7 +191,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (checkInternetConnection()) {
-                    sendMessage();
+                    String mensajeAEnviar = inputMessage.getText().toString().trim();
+                    if(!mensajeAEnviar.isEmpty()){
+                        sendMessage();
+                    }
+                }else{
+                    Toast.makeText(MainActivity.this, "No hay conexion a internet", Toast.LENGTH_SHORT).show();
                 }
             }
         });
