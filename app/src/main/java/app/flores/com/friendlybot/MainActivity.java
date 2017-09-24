@@ -1,6 +1,7 @@
 package app.flores.com.friendlybot;
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -12,11 +13,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -46,11 +45,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Handler;
+
+import app.flores.com.friendlybot.ChatEspecialista.ChatEspecialista;
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    private boolean typingStarted;
     private RecyclerView recyclerView;
     private ChatAdapter mAdapter;
     private ArrayList messageArrayList;
@@ -147,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
         this.inputMessage.setText("");
         this.initialRequest = true;
-
         sendMessage();
 
 
@@ -219,6 +219,25 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id){
+            case R.id.action_about:
+                    new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_IMAGE_TYPE)
+                        .setTitleText("Hackaton 2017 - MINSA")
+                        .setContentText("victor.saico@tecsup.edu.pe - jorge.floresb@tecsup.edu.pe")
+                        .setCustomImage(R.drawable.minsalogo)
+
+                .show();
+                return true;
+            case R.id.action_dialog:
+                Intent i = new Intent(MainActivity.this, ChatEspecialista.class);
+                startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     // Speech-to-Text Record Audio permission
@@ -307,6 +326,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                             messageArrayList.add(outMessage);
                         }
+
                         runOnUiThread(new Runnable() {
                             public void run() {
                                 mAdapter.notifyDataSetChanged();
@@ -372,7 +392,7 @@ public class MainActivity extends AppCompatActivity {
         if (isConnected) {
             return true;
         } else {
-            Toast.makeText(this,"Conexion de internet no disponible", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, " Conexion de internet no disponible ", Toast.LENGTH_LONG).show();
             return false;
         }
     }
