@@ -15,7 +15,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:id="@+id/fotoPerfil"
-        android:src="@drawable/ic_womanface"
+        android:src="@drawable/call_center"
         />
     <TextView
         android:layout_width="wrap_content"
