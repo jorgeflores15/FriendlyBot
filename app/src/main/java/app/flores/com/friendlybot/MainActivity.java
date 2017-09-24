@@ -171,9 +171,9 @@ public class MainActivity extends AppCompatActivity {
                             streamPlayer = new StreamPlayer();
                             if (audioMessage != null && !audioMessage.getMessage().isEmpty())
                                 //Change the Voice format and choose from the available choices
-                                streamPlayer.playStream(textToSpeech.synthesize(audioMessage.getMessage(), Voice.EN_LISA).execute());
+                                streamPlayer.playStream(textToSpeech.synthesize(audioMessage.getMessage(), Voice.ES_SOFIA).execute());
                             else
-                                streamPlayer.playStream(textToSpeech.synthesize("No hay texto especificado", Voice.EN_LISA).execute());
+                                streamPlayer.playStream(textToSpeech.synthesize("No hay texto especificado", Voice.ES_LAURA).execute());
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -224,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_about:
                     new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_IMAGE_TYPE)
                         .setTitleText("Hackaton 2017 - MINSA")
-                        .setContentText("victor.saico@tecsup.edu.pe - jorge.floresb@tecsup.edu.pe")
+                        .setContentText("jorge.floresb@tecsup.edu.pe")
                         .setCustomImage(R.drawable.minsalogo)
 
                 .show();
@@ -263,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-        // if (!permissionToRecordAccepted ) finish();
+        if (!permissionToRecordAccepted ) finish();
 
     }
 
