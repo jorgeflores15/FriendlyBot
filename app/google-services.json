@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "209095768535",
+    "firebase_url": "https://friendlybot-86ce7.firebaseio.com",
+    "project_id": "friendlybot-86ce7",
+    "storage_bucket": "friendlybot-86ce7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209095768535:android:014d9bbeb49c760f",
+        "android_client_info": {
+          "package_name": "app.flores.com.friendlybot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209095768535-h01c87r269cag4fjjjd416kril3b504j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.flores.com.friendlybot",
+            "certificate_hash": "aa85eee254dc52f5817d9cb69b072df1e1257f49"
+          }
+        },
+        {
+          "client_id": "209095768535-f14sg1hm3q016oe2j0ecind31dbqu7cm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBydCvIArFP0uq5DJp1ncEcj19cj5-YC68"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209095768535-f14sg1hm3q016oe2j0ecind31dbqu7cm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
