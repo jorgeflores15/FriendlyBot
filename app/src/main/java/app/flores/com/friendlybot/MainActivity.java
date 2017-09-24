@@ -12,6 +12,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -43,10 +46,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
+import java.util.logging.Handler;
 
 public class MainActivity extends AppCompatActivity {
 
+    private boolean typingStarted;
     private RecyclerView recyclerView;
     private ChatAdapter mAdapter;
     private ArrayList messageArrayList;
@@ -143,6 +147,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
         this.inputMessage.setText("");
         this.initialRequest = true;
+
         sendMessage();
 
 
@@ -302,7 +307,6 @@ public class MainActivity extends AppCompatActivity {
                             }
                             messageArrayList.add(outMessage);
                         }
-
                         runOnUiThread(new Runnable() {
                             public void run() {
                                 mAdapter.notifyDataSetChanged();
@@ -368,7 +372,7 @@ public class MainActivity extends AppCompatActivity {
         if (isConnected) {
             return true;
         } else {
-            Toast.makeText(this, " Conexion de internet no disponible ", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Conexion de internet no disponible", Toast.LENGTH_LONG).show();
             return false;
         }
     }
