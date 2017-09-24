@@ -2,13 +2,10 @@
 <shape
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-
     <!-- view background color -->
     <solid
         android:color="@color/accent" >
     </solid>
-
-
 
     <!-- If you want to add some padding -->
     <padding
@@ -24,5 +21,4 @@
              android:bottomLeftRadius="10dp"
              android:topLeftRadius="250dp"
              android:bottomRightRadius="250dp"></corners>
-
 </shape>

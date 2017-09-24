@@ -48,10 +48,7 @@ import java.util.Map;
 
 import app.flores.com.friendlybot.ChatEspecialista.ChatEspecialista;
 import cn.pedant.SweetAlert.SweetAlertDialog;
-
-
 public class MainActivity extends AppCompatActivity {
-
     private RecyclerView recyclerView;
     private ChatAdapter mAdapter;
     private ArrayList messageArrayList;
@@ -96,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
         TTS_username = mContext.getString(R.string.TTS_username);
         TTS_password = mContext.getString(R.string.TTS_password);
         analytics_APIKEY = mContext.getString(R.string.mobileanalytics_apikey);
-
 
         //Bluemix Mobile Analytics
         BMSClient.getInstance().initialize(getApplicationContext(), BMSClient.REGION_US_SOUTH);
@@ -292,9 +288,8 @@ public class MainActivity extends AppCompatActivity {
             Message inputMessage = new Message();
             inputMessage.setMessage(inputmessage);
             inputMessage.setId("100");
+            Toast.makeText(getApplicationContext(), "Haga clic al icono para grabar", Toast.LENGTH_SHORT).show();
             this.initialRequest = false;
-            Toast.makeText(getApplicationContext(), "Toque el icono para enviar mensaje", Toast.LENGTH_LONG).show();
-
         }
 
         this.inputMessage.setText("");
@@ -365,13 +360,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }).start();
             listening = true;
-            Toast.makeText(MainActivity.this, "Escuchando.. Click para detener", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "Escuchando... Click al icono para detener", Toast.LENGTH_SHORT).show();
 
         } else {
             try {
                 microphoneHelper.closeInputStream();
                 listening = false;
-                Toast.makeText(MainActivity.this, "Sonido detenido.... Clic para empezar", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Sonido detenido... Clic al icono para empezar", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -392,7 +387,7 @@ public class MainActivity extends AppCompatActivity {
         if (isConnected) {
             return true;
         } else {
-            Toast.makeText(this, " Conexion de internet no disponible ", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "No hay conexion a internet", Toast.LENGTH_SHORT).show();
             return false;
         }
     }

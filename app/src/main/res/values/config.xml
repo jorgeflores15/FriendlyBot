@@ -6,12 +6,14 @@
     <string name="conversation_password">ETYTQvV0hVRD</string>  
 
     <!--Watson Speech-To-Text Service Credentials--> 
-    <string name="STT_username">faee8d6a-43f2-4145-8c8f-170c688dfd51</string> 
-    <string name="STT_password"></string>  
+    <string name="STT_username2">faee8d6a-43f2-4145-8c8f-170c688dfd51</string> 
+    <string name="STT_username">520050ba-f88c-4eaf-b935-4dc01bb260a0</string> 
+    <string name="STT_password">37EBZVXr1hZQ</string>  
 
     <!--Watson Text-To-Speech Service Credentials--> 
-    <string name="TTS_username"></string>  
-    <string name="TTS_password">wH6GN5ZFHoYI</string>
+    <string name="TTS_username">ea56dbd8-e4dd-4408-bdde-ac76d568070e</string>  
+    <string name="TTS_password">bv1fBgkXkbmp</string>
+    <string name="TTS_password2">wH6GN5ZFHoYI</string>
 
     <!--Bluemix Mobile Analytics--> 
     <string name="mobileanalytics_apikey">5bc78043-759d-4e52-9355-861b406bdaef</string>

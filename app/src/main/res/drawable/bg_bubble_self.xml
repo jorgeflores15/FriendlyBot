@@ -5,7 +5,6 @@
     <!-- view background color -->
     <solid android:color="@color/bg_bubble_self"></solid>
 
-
     <!-- If you want to add some padding -->
     <padding
         android:bottom="4dp"
